@@ -45,7 +45,7 @@ mkdir -p "logs"
 set -x
 
 sbatch --export=ALL,origin_dir="${HOME}/scratch/",origin_basename="${scratch_proj}",dest_targz_path="${dest_path}",compress=$compress \
-    --mem="${slurm_mem}" --cpus-per-task=$cpus --time="${slurm_time}" --output="logs/${dest_fname}.log" compress_job.sh
+    --mem="${slurm_mem}" --cpus-per-task=$cpus --time="${slurm_time}" --output="logs/${dest_fname}.log"  # --depend=afterok:45242355_3 compress_job.sh
 
 
 
